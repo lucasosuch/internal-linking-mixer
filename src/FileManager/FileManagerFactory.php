@@ -11,7 +11,7 @@ final class FileManagerFactory
      * @return FileReader
      * @throws FileReaderNotFoundException
      */
-    public static function create(string $fileReader): FileReader
+    public function create(string $fileReader): FileReader
     {
         switch($fileReader) {
             case FileReaderType::STORAGE:
