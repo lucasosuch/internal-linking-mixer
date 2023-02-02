@@ -4,5 +4,5 @@ namespace InternalLinking\FileManager;
 
 interface FileReader
 {
-    public function read(string $path): string;
+    public function read(string $path): array;
 }
