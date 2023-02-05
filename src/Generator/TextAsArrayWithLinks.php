@@ -28,13 +28,14 @@ class TextAsArrayWithLinks implements TextTransformer
      */
     private function transformLine(array $row): array
     {
-        $urlToAdd = $row[0];
+        $targetUrl = $row[0];
         $wordToReplace = $row[1];
         $content = $row[2];
-        $targetUrl = $row[3];
+        $urlToAdd = $row[3];
 
         return [
-            'content' => preg_replace("/".preg_quote($wordToReplace, "/")."/i", "<a href='{$urlToAdd}'>$0</a>", $content),
+            'new_content' => preg_replace("/".preg_quote($wordToReplace, "/")."/i", "<a href='{$urlToAdd}'>$0</a>", $content),
+            'old_content' => $row[2],
             'target_url' => $targetUrl,
         ];
     }
