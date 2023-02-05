@@ -15,10 +15,10 @@ final class TextWithInternalLinkingGeneratorTest extends TestCase
     {
         $initialArray = [
             [
-                'https://a.com/b',
+                'https://a.com/target',
                 'maxime',
                 'Et just perspicatis ea quo dolor et debitis quae. Maxime voluptas molestias consequatur fugue.',
-                'https://a.com/target',
+                'https://a.com/b',
             ]
         ];
 
@@ -30,8 +30,9 @@ final class TextWithInternalLinkingGeneratorTest extends TestCase
 
         $expectedArray = [
             [
-                'content' => "Et just perspicatis ea quo dolor et debitis quae. <a href='https://a.com/b'>Maxime</a> voluptas molestias consequatur fugue.",
-                'target_url' => "https://a.com/target"
+                'new_content' => "Et just perspicatis ea quo dolor et debitis quae. <a href='https://a.com/b'>Maxime</a> voluptas molestias consequatur fugue.",
+                'old_content' => "Et just perspicatis ea quo dolor et debitis quae. Maxime voluptas molestias consequatur fugue.",
+                'target_url' => "https://a.com/target",
             ]
         ];
 
