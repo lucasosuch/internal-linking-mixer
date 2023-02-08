@@ -23,23 +23,25 @@ class InternalLinkingMixer
 
     /**
      * @param string $filePath
+     * @param string $separator
      * @return $this
      * @throws FileReaderNotFoundException
      */
-    public function parseStorageFile(string $filePath): InternalLinkingMixer
+    public function parseStorageFile(string $filePath, string $separator): InternalLinkingMixer
     {
-        $this->parsedCVSFile = $this->fileManagerFactory->create(FileReaderType::STORAGE)->read($filePath);
+        $this->parsedCVSFile = $this->fileManagerFactory->create(FileReaderType::STORAGE)->read($filePath, $separator);
         return $this;
     }
 
     /**
      * @param string $filePath
+     * @param string $separator
      * @return $this
      * @throws FileReaderNotFoundException
      */
-    public function parseCloudFile(string $filePath): InternalLinkingMixer
+    public function parseCloudFile(string $filePath, string $separator): InternalLinkingMixer
     {
-        $this->parsedCVSFile = $this->fileManagerFactory->create(FileReaderType::CLOUD)->read($filePath);
+        $this->parsedCVSFile = $this->fileManagerFactory->create(FileReaderType::CLOUD)->read($filePath, $separator);
         return $this;
     }
 

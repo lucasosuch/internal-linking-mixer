@@ -18,7 +18,7 @@ final class InternalLinkingMixerTest extends TestCase
     {
         $internalLinkingMixer = new InternalLinkingMixer();
         $text = $internalLinkingMixer
-            ->parseStorageFile('storage/test-file.csv')
+            ->parseStorageFile('storage/test-file.csv', ';')
             ->generate()
             ->get();
 

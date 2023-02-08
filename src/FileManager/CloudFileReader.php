@@ -4,8 +4,13 @@ namespace InternalLinking\FileManager;
 
 class CloudFileReader implements FileReader
 {
-    public function read(string $path): array
+    /**
+     * @param string $path
+     * @param string $separator
+     * @return array
+     */
+    public function read(string $path, string $separator): array
     {
-        // TODO: Implement read() method.
+        return [];
     }
 }
